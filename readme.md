@@ -3,6 +3,12 @@ These two scripts will list all Ec2 Instances on all accounts in an Organization
 
 I also include a over permissive IAM policy, please adjust to your needs
 
+# Requirements
+
+- AWS Organization configured.
+
+- Master Account in AWS Organizations.
+
 # Instructions for running the scripts.
 
 - Deploy the Cloud Formation (RoleAdmin.yaml) as StackSet on all the accounts on your Organization from your organizations master account.
@@ -21,3 +27,5 @@ As described in the official docs[https://docs.aws.amazon.com/cli/latest/usergui
 Thanks to this page[https://howto.lintel.in/listing-instances-multiple-regions-aws/]
 - Count the instances with (cat *.txt | wc -l)
 
+# Disclaimer
+I am not resposible if your aws account launch a nuclear missil. Use at your own risk.
