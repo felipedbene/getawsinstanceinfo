@@ -10,7 +10,7 @@ Resources:
           - Effect: Allow
             Principal: 
               AWS:
-                - 'arn:aws:iam::249477202910:root'
+                - 'arn:aws:iam::<Your Account ID>:root'
             Action: sts:AssumeRole
       RoleName: "describeInstanceRole"
 Outputs:

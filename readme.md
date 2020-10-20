@@ -16,7 +16,19 @@ How to [https://aws.amazon.com/blogs/aws/new-use-aws-cloudformation-stacksets-fo
 
 This will create a role in all accounts named "describeInstanceRole". Check it before proceding.
 
-- Create an IAM User with Administration Access (Probably over permissive).
+The following two steps are actually optional due to the fact that accounts linked to an organization have a role called *OrganizationAccountAccessRole* which can be used.
+
+- (Optional) Edit the cloudformation (RoleAdmin.yaml) with your master accout number (12 Digits no dashes).
+    >    ....
+    >  - Effect: Allow
+    >    Principal: 
+    >      AWS:
+    >        - 'arn:aws:iam::<Your Account ID>:root'
+    >    ....
+
+- (Optional) Create an IAM User with Administration Access (Probably over permissive).
+
+- (Optional) If you are using the default role, edit the file *createProfiles.sh* to use your built-in Organizations Role. The file has instructions to be customized.
 
 - Configure your aws cli (aws configure) with the IAM User you created in the previous step.
 
